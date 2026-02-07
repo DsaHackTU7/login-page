@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Listing</title>
+    <link rel="stylesheet" href="stylesheets.css">
+</head>
+
+<body>
+
+    <!-- 🌿 MAIN PAGE LAYOUT STARTS HERE -->
+    <div class="container">
+
+        <!-- LEFT SIDE — FORM -->
+        <div class="form-section">
+            <h1>Create a Listing</h1>
+            <p>Sell surplus materials to industries that need them</p>
+
+            <!-- Your existing form fields go here -->
+            <label>Material Name</label>
+            <input type="text" placeholder="e.g. Recycled Plastic Granules">
+
+            <label>Price (per unit)</label>
+            <input type="text" placeholder="e.g. ₹25/kg">
+
+            <label>Description</label>
+            <textarea placeholder="Describe quality, quantity, and usage"></textarea>
+
+            <label>Certification</label>
+            <input type="text" placeholder="ISO, Pollution Board, etc.">
+
+            <label>Expiry / Valid Until</label>
+            <input type="date">
+
+            <div class="upload-box">
+                <label for="imageUpload">
+                    <h3>⬆ Upload Images</h3>
+                    <p>Drag & drop or click to browse</p>
+                </label>
+                <input type="file" id="imageUpload" multiple>
+            </div>
+
+            <button class="submit-btn">Submit Listing</button>
+
+        </div>
+
+
+        <!-- RIGHT SIDE — ILLUSTRATION -->
+        <div class="image-section">
+            <img src="graphic.png" alt="Buy and Sell Materials">
+        </div>
+
+    </div>
+    <!-- 🌿 MAIN PAGE LAYOUT ENDS HERE -->
+
+</body>
+</html>
