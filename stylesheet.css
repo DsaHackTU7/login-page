@@ -1,214 +1,133 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
-    background: #2F3E46;
-}
-
-/* MAIN CONTAINER */
-.container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: url("background.jpg") center/cover no-repeat;
-    border-radius: 10px;
-    margin-top: 20px;
-    overflow: hidden;
-}
-
-/* LEFT SIDE */
-.container .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 100%; /* FIXED (was 'vh' ❌) */
-    padding: 60px 80px 60px 120px;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #2F3E46, #354F52);
     color: #CAD2C5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow-x: hidden;
 }
 
-.logo {
-    font-size: 60px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+/* GLOW BACKGROUND */
+.bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    z-index: 0;
+    animation: float 14s infinite ease-in-out alternate;
 }
 
-/* IMAGE SIZE CONTROL */
-.hero-img {
-    width: 320px;
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
+.glow1 {
+    width: 350px;
+    height: 350px;
+    background: #84A98C;
+    top: 15%;
+    left: -100px;
 }
 
-.text-sci h2 {
-    font-size: 48px;
-    line-height: 1.1;
+.glow2 {
+    width: 450px;
+    height: 450px;
+    background: #52796F;
+    bottom: -120px;
+    right: -120px;
+    animation-delay: 4s;
 }
 
-.text-sci h2 span {
-    font-size: 20px;
-    font-weight: 400;
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(40px); }
 }
 
-.text-sci p {
-    font-size: 16px;
-    margin: 25px 0 10px;
-}
-
-.social-icons a i {
-    font-size: 22px;
-    color: #CAD2C5;
-    margin-right: 12px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover i {
-    transform: scale(1.2);
-}
-
-/* RIGHT SIDE LOGIN */
-.container .logreg-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-}
-
-/* LOGIN CARD */
-.form-box_login {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    border-radius: 12px;
-    color: #CAD2C5;
-    position: relative;
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.form-box_login h2 {
-    font-size: 32px;
+/* HERO */
+.rec-hero {
     text-align: center;
+    padding: 100px 20px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.rec-hero h1 {
+    font-size: 48px;
+    color: #84A98C;
     margin-bottom: 10px;
 }
 
-/* INPUT FIELDS */
-.input-box {
+.rec-hero p {
+    font-size: 18px;
+}
+
+/* FEATURES GRID */
+.rec-features {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
     position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #CAD2C5;
-    margin: 30px 0;
+    z-index: 1;
 }
 
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: #CAD2C5;
-    font-weight: 500;
-    padding-right: 30px;
-}
-
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    font-size: 16px;
-    font-weight: 500;
-    pointer-events: none;
-    transition: 0.4s ease;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: -6px;
-    font-size: 13px;
-}
-
-.input-box .icon {
-    position: absolute;
-    top: 14px;
-    right: 0;
-    font-size: 19px;
-}
-
-/* REMEMBER + FORGOT */
-.remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-}
-
-.remember-forgot label input {
-    accent-color: #CAD2C5;
-    margin-right: 4px;
-}
-
-.remember-forgot a {
-    color: #CAD2C5;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-/* BUTTON */
-.btn {
-    width: 100%;
-    height: 45px;
-    background: #354F52;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #CAD2C5;
-    margin-top: 15px;
-    font-weight: 500;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #52796F;
-    transform: scale(1.05);
-}
-
-/* SIGN UP LINK */
-.login-register {
-    font-size: 14px;
+.feature-card {
+    background: rgba(53, 79, 82, 0.85);
+    padding: 30px;
+    border-radius: 20px;
     text-align: center;
-    font-weight: 500;
-    margin-top: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-register a {
-    color: #CAD2C5;
-    font-weight: 600;
-    text-decoration: none;
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
-.login-register a:hover {
-    text-decoration: underline;
+.feature-card i {
+    font-size: 40px;
+    color: #84A98C;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* INTEGRATION BOX */
+.integration-box {
+    margin: 80px auto 100px;
+    max-width: 800px;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(53, 79, 82, 0.85);
+    border: 1px solid #84A98C;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 1;
+}
+
+.integration-box i {
+    font-size: 36px;
+    color: #84A98C;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .rec-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .rec-features {
+        grid-template-columns: 1fr;
+    }
+
+    .rec-hero h1 {
+        font-size: 34px;
+    }
 }
